@@ -4,6 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jugnu — Tera AI Body Double</title>
+  <!-- Meta Pixel — Jugnu_pixel : 1300672572237744 -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1300672572237744');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1300672572237744&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -1719,12 +1733,7 @@
 
     /* ── Confetti burst on CTA click ── */
     function handleCTAClick(e) {
-      // Replace YOUR_FORM_ID before going live
-      if (e.currentTarget.href.includes('YOUR_FORM_ID')) {
-        e.preventDefault();
-        alert('Form link update karo — YouForm ID set nahi hai abhi. Replace YOUR_FORM_ID in the HTML.');
-        return;
-      }
+      if (typeof fbq !== 'undefined') fbq('track', 'Lead');
       spawnConfetti(e.currentTarget);
     }
 
